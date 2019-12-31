@@ -1,22 +1,45 @@
-package ankita;
+package utils;
+
+import java.util.*;
 
 public class AccountApplication {
-
 	public static void main(String[] args) {
-		Account account = new Account();
-		account.setAccountNumber(117);
-		account.setBalance(6000);
-		account.setCustomerName("Ankita");
-		Account account2 = new Account();
-		Account account3 = new Account(115,"Aishwarya",60000);
-		System.out.println(account.getAccountNumber());
-		System.out.println(account.getCustomerName());
-		System.out.println(account.getBalance());
-		System.out.println(account2.getAccountNumber());
-		System.out.println(account2.getCustomerName());
-		System.out.println(account2.getBalance());
-		System.out.println(account3.getAccountNumber());
-		System.out.println(account3.getCustomerName());
-		System.out.println(account3.getBalance());
+		Scanner sc = new Scanner(System.in);
+		AccountOperations oper = new AccountOperations();
+		int i=0;
+		do{
+			System.out.println("Choose an operation:-");
+			System.out.println("1. Deposit");
+			System.out.println("2. Withdraw");
+			System.out.println("3. Check Balance");
+			System.out.println("4. Exit");
+			i=sc.nextInt();
+			int acno;
+			double amount;
+			switch(i){
+			case 1:
+				System.out.println("Enter Account number and Amount to be deposited.");
+				acno=sc.nextInt();
+				amount=sc.nextDouble();
+				oper.deposit(acno, amount);
+				break;
+			case 2:
+				System.out.println("Enter Account number and Amount to withdraw.");
+				acno=sc.nextInt();
+				amount=sc.nextDouble();
+				oper.withdraw(acno, amount);
+				break;
+			case 3:
+				System.out.println("Enter Account number.");
+				acno=sc.nextInt();
+				oper.checkBalance(acno);
+				break;
+			case 4:
+				System.out.println("Thank You");
+				break;
+			default:
+				System.out.println("Incorrect Option\n");
+			}
+		}while(i!=4);
 	}
 }

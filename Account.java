@@ -1,40 +1,59 @@
-package ankita;
+package utils;
 
 public class Account {
-	private int accountNumber;
-	private String customerName;
+	private int accno;
+	private String custname;
 	private double balance;
-	/*public Account(){
-		accountNumber = 12345;
-		customerName = "Niki";
-		balance=10000;
-	}*/
-	
-	public int getAccountNumber() {
-		return accountNumber;
-	}
 	public Account() {
-	}
-	public Account(int accountNumber, String customerName, double balance) {
 		super();
-		this.accountNumber = accountNumber;
-		this.customerName = customerName;
+	}
+	/**
+	 * @param accno
+	 * @param custname
+	 * @param balance
+	 */
+	public Account(int accno, String custname, double balance) {
+		super();
+		this.accno = accno;
+		this.custname = custname;
 		this.balance = balance;
 	}
-	public void setAccountNumber(int accountNumber) {
-		this.accountNumber = accountNumber;
+	/**
+	 * @return the accno
+	 */
+	public int getAccno() {
+		return accno;
 	}
-	public String getCustomerName() {
-		return customerName;
+	/**
+	 * @param accno the accno to set
+	 */
+	public void setAccno(int accno) {
+		this.accno = accno;
 	}
-	public void setCustomerName(String customerName) {
-		this.customerName = customerName;
+	/**
+	 * @return the custname
+	 */
+	public String getCustname() {
+		return custname;
 	}
+	/**
+	 * @param custname the custname to set
+	 */
+	public void setCustname(String custname) {
+		this.custname = custname;
+	}
+	/**
+	 * @return the balance
+	 */
 	public double getBalance() {
 		return balance;
 	}
+	/**
+	 * @param balance the balance to set
+	 */
 	public void setBalance(double balance) {
 		this.balance = balance;
 	}
+	
 	
 }
