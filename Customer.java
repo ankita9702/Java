@@ -1,26 +1,63 @@
-package ankita;
+package streams;
 
-public class Customer {
-	private int customerId;
-	private String customerName;
-	private String city;
-	public int getCustomerId() {
-		return customerId;
+import java.io.Serializable;
+
+public class Customer implements Serializable{
+	private static final long serialVersionUID = 1L;
+	private int custid;
+	private String name;
+	private double commn;
+	/**
+	 * @param custid
+	 * @param name
+	 * @param commn
+	 */
+	public Customer(int custid, String name, double commn) {
+		super();
+		this.custid = custid;
+		this.name = name;
+		this.commn = commn;
 	}
-	public void setCustomerId(int customerId) {
-		this.customerId = customerId;
+	/**
+	 * 
+	 */
+	public Customer() {
+		super();
 	}
-	public String getCustomerName() {
-		return customerName;
+	/**
+	 * @return the custid
+	 */
+	public int getCustid() {
+		return custid;
 	}
-	public void setCustomerName(String customerName) {
-		this.customerName = customerName;
+	/**
+	 * @param custid the custid to set
+	 */
+	public void setCustid(int custid) {
+		this.custid = custid;
 	}
-	public String getCity() {
-		return city;
+	/**
+	 * @return the name
+	 */
+	public String getName() {
+		return name;
 	}
-	public void setCity(String city) {
-		this.city = city;
+	/**
+	 * @param name the name to set
+	 */
+	public void setName(String name) {
+		this.name = name;
 	}
-	
+	/**
+	 * @return the commn
+	 */
+	public double getCommn() {
+		return commn;
+	}
+	/**
+	 * @param commn the commn to set
+	 */
+	public void setCommn(double commn) {
+		this.commn = commn;
+	}
 }
